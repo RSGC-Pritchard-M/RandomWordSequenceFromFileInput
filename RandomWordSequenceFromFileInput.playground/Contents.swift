@@ -127,7 +127,7 @@ Probable data structures
 
 
 
-/*: 
+/*:
 
 ## Goal 2
 
@@ -222,5 +222,55 @@ My assumptions
 
 
 // Implement Goal #3 below...
+
+
+
+// Create empty list of Probabilitys (Dictionary)
+var wordCounts = [String:Int]()
+
+// Loop over imput string
+for word in words {
+    //Inspect each Word
+    word
+    //Build the dictonary list of letter counts
+    if wordCounts[word] == nil{
+        wordCounts[word] = 1
+    }else{
+        //We know this letter is in the dictonary.We know it
+        //...just add one to current count
+        wordCounts[word]! = wordCounts[word]! + 1
+    }
+    
+}
+
+wordCounts
+
+//Get the length of the imput string
+words.count
+
+//Create an empty dictionaryto store the probabilitys
+var wordProbablilites = [String: Float]()
+
+//Loop over the list of letter counts
+for(word, count) in wordCounts {
+    
+    //Add an entry to the probabbilities in the dictionary
+    wordProbablilites[word] = Float(count) / Float(words.count) * 100
+    
+}
+
+
+wordProbablilites
+
+//check do the probabilities add up to 100?
+var total: Float = 0.0
+for (word, probability) in wordProbablilites {
+    total = total + probability
+    total
+}
+
+
+
+
 
 
